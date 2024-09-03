@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>316</x>
+      <y>456</y>
+      <w>88</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>::dbQueries
+--
+--
++mandID(//query()&#13;
+String id): //query()&#13;
+boolean
++shopID(//query()&#13;
+String id): //query()&#13;
+boolean
++bID(//query()&#13;
+String id): //query()&#13;
+String
++getInventory(//query()&#13;
+String bID): //query()&#13;
+ArrayList&lt;Inventory&gt;
++getInventoryById(//query()&#13;
+int invID): //query()&#13;
+ArrayList&lt;Inventory&gt;
++getLowStock(//query()&#13;
+String bID): //query()&#13;
+ArrayList&lt;Inventory&gt;
++checkStock(int invID): boolean
++isLoyal(//query()&#13;
+String id): //query()&#13;
+boolean
++getBranchPerf(//query()&#13;
+int branchID): //query()&#13;
+ArrayList&lt;Sale&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1156</x>
+      <y>252</y>
+      <w>260</w>
+      <h>164</h>
+    </coordinates>
+    <panel_attributes>::Inventory
+--
+-productId: int
+-productName: String
+-quantity: int
+-price: double
+-discount: int
+-loyalty: int
+--
++Inventory(int inventoryID, String productName, int quantity, double price, int discount, int loyalty): ctor
++Inventory(int inventoryID, String productName, double price, int discount, int loyalty): ctor
++toString(): String
++getProductId(): int
++setProductId(int productId): void
++getProductName(): String
++setProductName(String productName): void
++getQuantity(): int
++setQuantity(int quantity): void
++getPrice(): double
++setPrice(double price): void
++getDiscount(): int
++setDiscount(int discount): void
++getLoyalty(): int
++setLoyalty(int loyalty): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>116</y>
+      <w>236</w>
+      <h>164</h>
+    </coordinates>
+    <panel_attributes>::ManagerUI
+--
+-branchPerformanceButton: JButton
+-inventoryViewButton: JButton
+-branchID: String
+-tableModel: DefaultTableModel
+-inventoryTable: JTable
+-inventoryPanel: JPanel
+-editPanel: JPanel
+-nameField: JTextField
+-invIDField: JTextField
+-stockButton: JButton
+-priceField: JTextField
+-discountComboBox: JComboBox&lt;String&gt;
+-loyaltyComboBox: JComboBox&lt;String&gt;
+-updateButton: JButton
+--
++ManagerUI(String id): ctor
++actionPerformed(ActionEvent e): void
+-displayInventory(): void
+-updateInventoryPanel(): void
+-updateEditPanel(int invID, String name, int stock, double price, int discount, int loyalty): void
+-getDiscountOption(int discount): String
+-getLoyaltyOption(int loyalty): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>248</y>
+      <w>208</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>::Sale
+--
+-saleID: int
+-bID: int
+-cID: int
+-total: double
+-discount: double
+-profit: double
+--
++Sale(int saleID, int bID, int cID, double total, double discount, double profit): ctor
++toString(): String
++getSaleID(): int
++setSaleID(int saleID): void
++getbID(): int
++setbID(int bID): void
++getcID(): int
++setcID(int cID): void
++getTotal(): double
++setTotal(int total): void
++getDiscount(): double
++setDiscount(int discount): void
++getProfit(): double
++setProfit(int profit): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>116</y>
+      <w>236</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>::ShopperUI
+--
+-app: ShopperApp
+-tableModel: DefaultTableModel
+-inventoryTable: JTable
+-inventoryPanel: JPanel
+-editPanel: JPanel
+-nameField: JTextField
+-invIDField: JTextField
+-stockButton: JTextField
+-priceField: JTextField
+-discountComboBox: JTextField
+-loyaltyComboBox: JTextField
+-totalCost: JTextField
+-purchaseWithCash: JButton
+-purchaseWithForm: JButton
+-logOut: JButton
+--
++ShopperUI(String id): ctor
++actionPerformed(ActionEvent e): void
+-displayInventory(): void
+-updateInventoryPanel(): void
+-updateEditPanel(int invID, String name, int stock, double price, int discount, int loyalty): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>324</y>
+      <w>224</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>::ShopperApp
+--
+-branchID: String
+-custID: String
+-isLoyal: boolean
+--
++ShopperApp(String id): ctor
++getInventory(): ArrayList&lt;Inventory&gt;
++updateStock(int invID, int stockAmt): void
++insertSale(int saleID, int bID, int cID, double total, double discount, double profit): void
++isLoyal(): boolean
++getBranchID(): String
++getCustID(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>348</y>
+      <w>96</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>::ManagerApp
+--
+-branchID: String
+--
++ManagerApp(String branchID): ctor
++getInventory(): ArrayList&lt;Inventory&gt;
++getBranchPerf(): ArrayList&lt;Sale&gt;
++updateInventory(int invID): void
++checkStock(int invID): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>452</y>
+      <w>124</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>::dbUpdate
+--
+--
++UpdateStock(int invID): void
++UpdateInv(int invID): void
++UpdateStockCust(int invID, int stockAmt): void
++updatedInfo(Inventory inventory, int invID): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>36</y>
+      <w>68</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>::loginGUI
+--
+-managerButton: JButton
+-shopperButton: JButton
+--
++loginGUI(): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>592</x>
+      <y>456</y>
+      <w>224</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>::dbInsert
+--
+--
++insertSale(int saleID, int bID, int cID, double total, double discount, double profit): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>0</y>
+      <w>72</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>::main
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

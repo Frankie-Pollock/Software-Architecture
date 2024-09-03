@@ -1,0 +1,6 @@
+Item Name: Pillow
+Amount: 12
+Price: 250.0
+Name: 
+Bank Details: 
+Address: 

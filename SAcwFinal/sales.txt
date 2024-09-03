@@ -1,0 +1,1 @@
+[Sale [saleID=912, bID=1, cID=1, total=549.5, discount=0.0, profit=549.5]]
