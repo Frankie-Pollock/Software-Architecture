@@ -1,4 +1,4 @@
-# SET10101 Software Architecture Resit Coursework
+# SET10101 Software Architecture Coursework
 
 ## Learning Outcomes Covered
 
